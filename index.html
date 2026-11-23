@@ -176,12 +176,12 @@
   /* ---------- keyword list ---------- */
   .kw{
     background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
-    padding:13px 14px;display:grid;grid-template-columns:26px 1fr 96px 14px;gap:11px;align-items:center;
+    padding:13px 14px;display:grid;grid-template-columns:26px 1fr 96px 14px;gap:11px;align-items:start;
     margin-bottom:8px;box-shadow:var(--shadow);width:100%;text-align:left;
     transition:border-color .16s, transform .16s;
   }
   .kw:hover{border-color:#CFCFC5;transform:translateY(-1px)}
-  .kw .rk{font-size:12px;font-weight:750;color:var(--sub2)}
+  .kw .rk{font-size:12px;font-weight:750;color:var(--sub2);padding-top:3px}
   .kw .kw-t{min-width:0;display:block}
   .kw .kt{display:block;font-size:13.5px;font-weight:750;letter-spacing:-.025em;line-height:1.3}
   .kw .kw-m{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:5px}
@@ -191,9 +191,9 @@
   .pill.up{background:var(--up-soft);color:var(--up)}
   .pill.warn{background:var(--warn-soft);color:var(--warn)}
   .pill.weak{background:#F0F0EC;color:var(--sub)}
-  .kw .sp{color:#A8A89E;justify-self:end}
+  .kw .sp{color:#A8A89E;justify-self:end;align-self:center}
   .kw .sp svg{display:block;width:96px;height:26px}
-  .kw .arw{color:#C2C2B8;display:grid;place-items:center}
+  .kw .arw{color:#C2C2B8;display:grid;place-items:center;align-self:center}
   .kw .arw svg{width:13px;height:13px}
   .kw-note{font-size:10.5px;color:var(--sub2);margin:10px 2px 0;line-height:1.5}
 
