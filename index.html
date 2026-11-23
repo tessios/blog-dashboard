@@ -136,6 +136,7 @@
   }
   .pub{display:flex;align-items:flex-end;gap:7px}
   .pub b{font-size:29px;font-weight:780;letter-spacing:-.05em;line-height:1}
+  .pub b.txt{font-size:21px;font-weight:750;letter-spacing:-.04em}
   .pub span{font-size:11px;color:var(--sub);padding-bottom:2px}
   .last{
     background:#FAFAF7;border:1px solid var(--line-soft);border-radius:10px;padding:9px 10px;
@@ -476,7 +477,7 @@
   function renderBlogs(d){
     return d.blogs.map(function(b,bi){
       var pub = (b.published_total==null)
-        ? '<b class="num" style="font-size:22px;letter-spacing:-.03em">'+esc(b.published_sub)+'</b>'
+        ? '<b class="txt">'+esc(b.published_text||"—")+'</b>'
         : '<b class="num">'+esc(b.published_total)+'</b><span>건</span>';
       var dist = "";
       if(b.dist && b.dist.length){
@@ -536,9 +537,9 @@
     var c=t.cohort;
     var head='<thead><tr><th>축</th>'+c.dates.map(function(x){return '<th class="num">'+esc(x)+'</th>';}).join("")+'<th>판정</th></tr></thead>';
     var body=c.axes.map(function(a){
-      var mx=Math.max.apply(null,a.values);
-      return '<tr><td>'+esc(a.name)+'</td>'+a.values.map(function(v){
-        return '<td class="num'+(v===mx&&v>0?' hi':'')+'">'+v+'</td>';
+      var li=a.values.length-1;
+      return '<tr><td>'+esc(a.name)+'</td>'+a.values.map(function(v,i){
+        return '<td class="num'+(i===li?' hi':'')+'">'+v+'</td>';
       }).join("")+'<td>'+esc(a.verdict)+'</td></tr>';
     }).join("");
     document.getElementById("cohort").innerHTML=head+'<tbody>'+body+'</tbody>';
