@@ -405,7 +405,7 @@
       <div class="reads" id="reads"></div>
 
       <div class="sec-head">
-        <h2>5일 코호트</h2>
+        <h2 id="cohort-title">6일 코호트</h2>
         <span>같은 규칙으로 다시 센 등장 수</span>
       </div>
       <div class="tblwrap"><div class="tw"><table id="cohort"></table></div></div>
@@ -707,6 +707,7 @@
     document.getElementById("cards").innerHTML=renderBlogs(d);
     document.getElementById("kws").innerHTML=renderKeywords(d);
     document.getElementById("kw-date").textContent=d.trend.cohort.dates[0]+"~"+d.trend.cohort.dates[d.trend.cohort.dates.length-1]+" 코호트 기준";
+    var ct=document.getElementById("cohort-title"); if(ct) ct.textContent=d.trend.cohort.dates.length+"일 코호트";
     document.getElementById("kw-note").textContent="키워드는 매일 07:45 스캔 결과로 갱신됩니다. 표본은 그날 홈판에 노출된 글이며 전체 발행량이 아닙니다. 숫자는 확인된 값만 씁니다.";
     renderTrend(d);
     renderPipeline(d);
